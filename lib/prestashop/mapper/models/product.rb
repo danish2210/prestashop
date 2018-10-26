@@ -10,8 +10,8 @@ module Prestashop
                     :weight, :quantity_discount, :ean13, :upc, :cache_is_pack, :cache_has_attachment, :is_virtual, :on_sale, :online_only, :ecotax, :minimal_quantity,
                     :price, :wholesale_price, :unity, :unit_price_ratio, :additional_shipping_cost, :customizable, :text_fields, :uploadable_files, :active,
                     :redirect_type, :id_product_redirect, :available_for_order, :available_date, :condition, :show_price, :indexed, :visibility, :advanced_stock_management, :description, :low_stock_alert
-      attr_accessor :id_lang, :id_categories, :id_features
-      attr_writer   :id, :name, :description_short, :link_rewrite, :reference, :price, :available_now, :available_later, :meta_description, :meta_keywords, :meta_title, :low_stock_alert
+      attr_accessor :id_lang, :id_categories, :id_features, :stock_available
+      attr_writer   :id, :stock_available, :name, :description_short, :link_rewrite, :reference, :price, :available_now, :available_later, :meta_description, :meta_keywords, :meta_title, :low_stock_alert
 
       def initialize args = {}
         @id                         = args[:id]
@@ -29,6 +29,7 @@ module Prestashop
         @reference                  = args.fetch(:reference)
         @supplier_reference         = args[:supplier_reference]
         @location                   = args[:location]
+        @stock_available            = args[:stock_available]
         @width                      = args[:width]
         @height                     = args[:height]
         @depth                      = args[:depth]
@@ -123,6 +124,7 @@ module Prestashop
           wholesale_price:      wholesale_price,
           reference:            reference,
           active:               active,
+          stock_available:      stock_available,
           redirect_type:        '404',
           low_stock_alert:      low_stock_alert,
           available_for_order:  available_for_order,
