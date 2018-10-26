@@ -124,7 +124,7 @@ module Prestashop
           reference:            reference,
           active:               active,
           redirect_type:        '404',
-          low_stock_alert:      low_stock_alert
+          low_stock_alert:      low_stock_alert,
           available_for_order:  available_for_order,
           condition:            condition,
           show_price:           show_price,
