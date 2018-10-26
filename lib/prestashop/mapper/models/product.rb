@@ -73,7 +73,7 @@ module Prestashop
         @available_now              = args[:available_now]
         @available_later            = args[:available_later]
         @id_lang                    = args.fetch(:id_lang)
-        @low_stock_alert            = args.fetch(:low_stock_alert)
+        @low_stock_alert            = args.fetch(:low_stock_alert, '0')
         @id_categories              = args[:id_categories]
         @id_features                = args[:id_features]
       end
