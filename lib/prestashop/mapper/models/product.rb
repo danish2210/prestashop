@@ -126,6 +126,7 @@ module Prestashop
           active:               active,
           stock_available:      stock_available,
           redirect_type:        '404',
+          state:                1,
           low_stock_alert:      low_stock_alert,
           available_for_order:  available_for_order,
           condition:            condition,
